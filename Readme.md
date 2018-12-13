@@ -1,6 +1,23 @@
 # Command Mobile Penetration Testing Cheatsheet
+For this time is about Android :) IOS soon :)
 
 ## ADB Cheatsheet
+Download adb http://adbdriver.com/downloads/ or you can using adb as default from Android Studio.
+
+### ADB Command
+```
+#Check Android Architecture
+adb shell getprop | grep abi
+
+#List all application already installed
+adb shell pm list packages -f | grep -i 'namafile'
+
+#Tracing log on android
+adb logcat | grep nama_package
+
+#Install application to device
+adb install namaFile.apk
+```
 
 ## Frida Cheatsheet
 Install Frida Server on android,</br>
@@ -12,7 +29,47 @@ $ adb shell "chmod 755 /data/local/tmp/frida-server"
 $ adb shell "/data/local/tmp/frida-server &"
 ```
 
-### AndBug - For Enumerate Class And Method On Application
+### Frida Command
+```
+# Connect Frida to an iPad over USB and list running processes
+frida-ps -U
+
+# List running applications
+frida-ps -Ua
+
+# List installed applications
+frida-ps -Uai
+
+# Connect Frida to the specific device
+frida-ps -D 0216027d1d6d3a03
+
+# Trace recv* and send* APIs in Safari
+frida-trace -i "recv*" -i "send*" Safari
+
+# Trace ObjC method calls in Safari
+frida-trace -m "-[NSView drawRect:]" Safari
+
+# Launch SnapChat on your iPhone and trace crypto API calls
+frida-trace -U -f com.toyopagroup.picaboo -I "libcommonCrypto*"
+
+#Frida trace every open function while program start
+frida-trace -U -i open src.com.app
+
+```
+
+### Frida Tracing
+Download : https://github.com/Piasy/FridaAndroidTracer
+```
+usage: java -jar FridaAndroidTracer.jar
+-a,--expand-array      expand array values
+-c,--classes <arg>     classes to be hooked
+-j,--jars <arg>        jar files to be included
+-o,--output <arg>      output script path
+-p,--include-private   include private methods
+-s,--skip <arg>        methods to be skipped
+```
+
+## AndBug - For Enumerate Class And Method On Application
 Download https://github.com/swdunlop/AndBug </br>
 Usage:
 ```
@@ -23,11 +80,92 @@ andbug classes -p [PID application / name of application] > class.txt
 andbug methods -p [PID application / name of application] [class name]
 ```
 
-## Install Burp Certificate On Android
-
 ## Android Log Tracing
 Using PIDCAT : https://github.com/JakeWharton/pidcat </br>
 Usage: 
 ```
-./pidcat id.co.applikasi
+./pidcat id.co.aplication
 ```
+
+## Decompile APK File
+
+### APKX for decompile apk
+Download https://github.com/b-mueller/apkx </br>
+Usage : 
+
+```
+apkx -c enjarify -d procyon namafile.apk
+```
+
+### Bytecode Viewer
+Download https://github.com/Konloch/bytecode-viewer/releases </br>
+To read source code of dex or jar file. 
+
+## Install Burp Certificate On Android
+Convert burp certificate from DER to PEM . If you lazy, you can download PEM file on this repository.
+```
+openssl x509 -inform DER -in cacert.der -out cacert.pem
+# Get subject_hash_old (or subject_hash if OpenSSL < 1.0)
+openssl x509 -inform PEM -subject_hash_old -in cacert.pem |head -1
+mv cacert.pem 9a5ba575.0
+```
+Install PEM file to the System Trusted Credentials on device.
+```
+adb root
+adb remount  
+adb push 9a5ba575.0 /system/etc/security/cacerts/  
+adb shell "chmod 644 /system/etc/security/cacerts/9a5ba575.0"
+adb shell "reboot" 
+```
+If your /system cant mounting, You must mounting first.
+```
+adb root
+adb shell
+# Check mounting list
+cat /proc/mounts
+#/dev/block/bootdevice/by-name/system /system ext4 ro,seclabel,relatime,discard,data=ordered 0 0
+mount -o rw,remount -t rfs /dev/block/bootdevice/by-name/system /system
+adb push 9a5ba575.0 /system/etc/security/cacerts/  
+adb shell "chmod 644 /system/etc/security/cacerts/9a5ba575.0"
+adb shell "reboot" 
+```
+
+## Install Open Gapps On Android Emulator
+Download : https://opengapps.org </br>
+Extract :
+```
+unzip open_gapps-x86_64******.zip 'Core/*'
+rm Core/setup*
+lzip -d Core/*.lz
+for f in $(ls Core/*.tar); do
+  tar -x --strip-components 2 -f $f
+done
+```
+Install to Emulator : 
+```
+adb root
+adb remount
+adb push etc /system
+adb push framework /system
+adb push app /system
+adb push priv-app /system
+adb shell stop
+adb shell start
+```
+
+## Emulator
+### Android Studio Emulator
+This command for run emulator from android studio, make you have already install android studio before.</br>
+if you want to root android emulator, please using system without (Google API's) or (Google Play) </br>
+```
+# List all emulator
+emulator.exe -list-avds 
+# Run Emulator
+emulator.exe -avd [EmulatorName]
+```
+
+### Genymotion
+Download https://www.genymotion.com/ 
+
+## Contribution
+if you have know about more command or a new trick to do something with Mobile Pentest, please let me know :)
