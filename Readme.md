@@ -17,6 +17,12 @@ $ adb logcat | grep com.app.testing
 
 #Install application to device
 $ adb install app.testing.apk
+
+# Get the full path of an application
+$ adb shell pm path com.example.someapp
+
+# Download the apk to development machine
+$ adb pull /data/app/com.example.someapp-2.apk
 ```
 
 ## Frida Cheatsheet
