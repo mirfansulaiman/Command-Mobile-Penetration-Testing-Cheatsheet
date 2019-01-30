@@ -23,6 +23,9 @@ $ adb shell pm path com.example.someapp
 
 # Download the apk to development machine
 $ adb pull /data/app/com.example.someapp-2.apk
+
+# Dump activity on app
+$ adb shell dumpsys activity top | grep ACTIVITY
 ```
 
 ## Frida Cheatsheet
