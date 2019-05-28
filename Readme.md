@@ -8,6 +8,8 @@ Download adb http://adbdriver.com/downloads/ or you can using adb as default fro
 ```
 #Check Android Architecture
 $ adb shell getprop | grep abi
+# Try to use this command to get simple output :)
+$ adb shell getprop ro.product.cpu.abi
 
 #List all application already installed
 $ adb shell pm list packages -f | grep -i 'testing'
