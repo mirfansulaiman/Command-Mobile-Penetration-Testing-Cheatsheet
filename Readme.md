@@ -28,6 +28,12 @@ $ adb pull /data/app/com.example.someapp-2.apk
 
 # Dump activity on app
 $ adb shell dumpsys activity top | grep ACTIVITY
+
+# Create new file in adb shell
+$ cat > filename.xml
+You can add lines to a text files using:
+$ cat >> filename.xml
+Both commands can be terminated using ctrl-D.
 ```
 
 ## Frida Cheatsheet
