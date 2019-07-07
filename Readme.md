@@ -87,6 +87,10 @@ $ java -jar FridaAndroidTracer.jar
 -s,--skip <arg>        methods to be skipped
 ```
 
+### Frida Trick
+Bypass Root Detection:
+Bypass anti-root detection in android application try to using different data type to break the logic flaws.
+
 ## AndBug - For Enumerate Class And Method On Application
 Download https://github.com/swdunlop/AndBug </br>
 Usage:
