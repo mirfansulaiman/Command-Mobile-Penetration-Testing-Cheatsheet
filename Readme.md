@@ -232,4 +232,4 @@ $ qark --java path/to/specific/java/file.java
 
 ## Contribution
 if you have know about more command or a new trick to do something with Mobile Pentest, please let me know :) </br>
-email : mirfansulaiman96@gmail.com / irfan.sulaiman@ctfs.me
+email : doctorgombal@gmail.com 
