@@ -1,6 +1,6 @@
 # Command Mobile Penetration Testing Cheatsheet
 The things what you should know about android :) </br>
-For iOS application please check [iOS Pentest Cheatsheet](https://github.com/mirfansulaiman/Command-Mobile-Penetration-Testing-Cheatsheet/blob/master/ios-cheatsheet).</br>
+For iOS application please check [iOS Pentest Cheatsheet](https://github.com/mirfansulaiman/Command-Mobile-Penetration-Testing-Cheatsheet/blob/master/ios-cheatsheet.md).</br>
 
 ## ADB Cheatsheet
 Download adb http://adbdriver.com/downloads/ or you can using adb as default from Android Studio.
