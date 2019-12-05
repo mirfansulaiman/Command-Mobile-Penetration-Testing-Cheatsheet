@@ -91,6 +91,17 @@ $ java -jar FridaAndroidTracer.jar
 Bypass Root Detection:
 Bypass anti-root detection in android application try to using different data type to break the logic flaws.
 
+## Objection 
+Install from https://github.com/sensepost/objection </br>
+`pip3 install objection`</br></br>
+Usage:</br>
+Default Running Objection </br>
+`objection --gadget "com.application.id" explore`</br></br>
+Running Objection with command </br>
+`objection --gadget "com.application.id" explore --startup-command "ios jailbreak disable"`</br></br>
+Running Objection with script </br>
+`objection --gadget "com.application.id" explore --startup-script antiroot.js`</br>
+
 ## AndBug - For Enumerate Class And Method On Application
 Download https://github.com/swdunlop/AndBug </br>
 Usage:
