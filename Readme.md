@@ -235,6 +235,14 @@ Usage to scan Java source code files:
 $ qark --java path/to/parent/java/folder
 $ qark --java path/to/specific/java/file.java
 ```
+# SCREEN MIRRORING ANDROID DEVICE TO LAPTOP OR COMPUTER
+I believe you want to mirroring android screen to your laptop or computer, you can buy a software to do that or you can use this tool [SCRCPY](https://github.com/Genymobile/scrcpy) for free :D 
+## Install SCRCPY
+Mac : `brew install scrcpy`
+
+## Usefull command
+Run with window borderless : 
+`scrcpy -t --window-title 'My Research' --always-on-top`
 
 ## For Lazy People :v
 
