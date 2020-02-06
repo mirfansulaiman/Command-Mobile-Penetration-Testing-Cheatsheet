@@ -7,18 +7,18 @@ Download adb http://adbdriver.com/downloads/ or you can using adb as default fro
 
 ### ADB Command
 ```
-#Check Android Architecture
+# Check Android Architecture
 $ adb shell getprop | grep abi
 # Try to use this command to get simple output :)
 $ adb shell getprop ro.product.cpu.abi
 
-#List all application already installed
+# List all application already installed
 $ adb shell pm list packages -f | grep -i 'testing'
 
-#Tracing log on android
+# Tracing log on android
 $ adb logcat | grep com.app.testing
 
-#Install application to device
+# Install application to device
 $ adb install app.testing.apk
 
 # Get the full path of an application
@@ -35,6 +35,9 @@ $ cat > filename.xml
 You can add lines to a text files using:
 $ cat >> filename.xml
 Both commands can be terminated using ctrl-D.
+
+# Dump Memory
+$ adb shell dumpsys meminfo com.package.name
 ```
 
 ## Frida Cheatsheet
