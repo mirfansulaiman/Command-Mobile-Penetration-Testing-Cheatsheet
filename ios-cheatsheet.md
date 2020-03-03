@@ -17,4 +17,11 @@ http://iphonedevwiki.net/index.php/SSH_Over_USB
 ## Download .ipa file from app store or iPhone/iPad device
 
 ### Need Jailbroken 
+#### Clutch
 [Clutch](https://github.com/KJCracks/Clutch)
+
+#### Frida Script
+[Frida-ios-dump](https://github.com/AloneMonkey/frida-ios-dump)
+command:
+`$ iproxy 2222 22`
+`$ ./dump.py BundleID`
