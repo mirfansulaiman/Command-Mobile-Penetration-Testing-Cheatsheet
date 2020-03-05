@@ -25,3 +25,21 @@ http://iphonedevwiki.net/index.php/SSH_Over_USB
 command:
 `$ iproxy 2222 22`
 `$ ./dump.py BundleID`
+
+## iOS Binary Analysis
+### ios-Analysis
+Download : [ios-analysis](https://github.com/IAIK/ios-analysis)
+
+Install : 
+```
+$ git clone https://github.com/IAIK/ios-analysis
+$ cd ios-analysis
+$ git submodule update --init --recursive
+```
+
+if you get error like this :
+`error: RPC failed; curl 56 LibreSSL SSL_read: SSL_ERROR_SYSCALL, errno 60`
+
+run this command:
+`git config http.postBuffer 524288000`
+
