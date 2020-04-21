@@ -43,3 +43,13 @@ if you get error like this :
 run this command:
 `git config http.postBuffer 524288000`
 
+## Sign & Install .ipa using windows
+
+- Download [altsigner](http://qd.appdown.info/qd/altsignerqd/altsignerInstaller_1.1.0.0/AltSigner_Installer_1.1.0.0.exe)
+- Install latest iTunes (note: install using the binary, do not install from microsoft store)
+- Open Itunes and select devices to copy UDID of your devices
+- Open altsigner.exe, fill your [email,password,UDID,.ipa file path]
+![https://kubadownload.com/site/assets/files/2957/altsigner-ios-13.815x0-is.webp](https://kubadownload.com/site/assets/files/2957/altsigner-ios-13.815x0-is.webp)
+- click sign to sign the `.ipa` files, click `install` to install the `.ipa`
+
+
