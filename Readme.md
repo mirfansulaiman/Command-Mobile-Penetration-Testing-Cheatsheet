@@ -104,7 +104,10 @@ Default Running Objection </br>
 Running Objection with command </br>
 `objection --gadget "com.application.id" explore --startup-command "ios jailbreak disable"`</br></br>
 Running Objection with script </br>
-`objection --gadget "com.application.id" explore --startup-script antiroot.js`</br>
+`objection --gadget "com.application.id" explore --startup-script antiroot.js`</br></br>
+Inject Frida Gadget into APK with Objection</br>
+`objection patchapk --source apkname.apk`</br>
+After run application, the application will be paused and show the white screen at this moment you should run `objection explore` to resume the application.
 
 ## AndBug - For Enumerate Class And Method On Application
 Download https://github.com/swdunlop/AndBug </br>
