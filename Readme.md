@@ -38,6 +38,12 @@ Both commands can be terminated using ctrl-D.
 
 # Dump Memory
 $ adb shell dumpsys meminfo com.package.name
+
+# Disable verification adb
+$ adb shell settings put global verifier_verify_adb_installs 0
+
+# Disable verification package
+$ adb shell settings put global package_verifier_enable 0
 ```
 
 ## Frida Cheatsheet
