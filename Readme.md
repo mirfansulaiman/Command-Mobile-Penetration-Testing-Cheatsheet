@@ -227,6 +227,9 @@ $ emulator.exe -avd [EmulatorName]
 ### Genymotion
 Download https://www.genymotion.com/ 
 
+### LDPlayer
+Download https://www.ldplayer.net/
+
 ## QARK - Quick Android Review Kit
 Download https://github.com/linkedin/qark </br>
 For quick analyze application on android with scanning the apk or java file and create Proof Of Concept of vulnerability.</br>
