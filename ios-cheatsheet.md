@@ -68,3 +68,12 @@ To generate our provisioning profile you can do it on XCODE while install the ap
  5. Go to xcode, and try to install dummy application into device. This step will trigger apple to generate new our certificate.
  6. And then, Open iOS App Signer
 - Reference: https://forum.kodi.tv/showthread.php?tid=287814
+
+# Capture Log Specific iOS Application
+
+## Idevicesyslog
+Command:
+```
+idevicesyslog -m "Vantage"
+```
+-m option is only print messages that contain STRING
