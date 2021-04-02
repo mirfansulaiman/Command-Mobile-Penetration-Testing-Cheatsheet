@@ -52,6 +52,24 @@ run this command:
 ![https://kubadownload.com/site/assets/files/2957/altsigner-ios-13.815x0-is.webp](https://kubadownload.com/site/assets/files/2957/altsigner-ios-13.815x0-is.webp)
 - click sign to sign the `.ipa` files, click `install` to install the `.ipa`
 
+## Sign & Install .ipa using online apps
+
+- https://www.iosappsigner.com/
+- https://www.installonair.com/
+- https://www.diawi.com/
+
+## Command line tools helper for iOS (Windows/Linux)
+
+- Download imobileconfig for (windows/linux) from: http://docs.quamotion.mobi/docs/download/
+
+## Running idevicedebug.exe on windows
+
+Need this file `DeveloperDiskImage.dmg` & `DeveloperDiskImage.dmg.signature` 
+(From xcode folder install on mac `/XCode/Contents/Developer/Platforms/IPhoneOS.platform/DeviceSupport/<iOS_version_number>/`)
+
+- mount the developerdiskimage: ./ideviceimagemounter.exe "./DeveloperDiskImage.dmg"
+- debug the apps : ./idevicedebug.exe -d run vantagepoint.id.Hook2
+
 ## Signing IPA File with Our Provisioning Profile
 
 This tool is very helpfull :) [iOS App Signer](https://dantheman827.github.io/ios-app-signer/) is GUI based. 
