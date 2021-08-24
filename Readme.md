@@ -254,6 +254,7 @@ $ qark --java path/to/specific/java/file.java
 I believe you want to mirroring android screen to your laptop or computer, you can buy a software to do that or you can use this tool [SCRCPY](https://github.com/Genymobile/scrcpy) for free :D 
 ## Install SCRCPY
 Mac : `brew install scrcpy`
+Windows: https://github.com/Genymobile/scrcpy#windows 
 
 ## Usefull command
 Run with window borderless : 
