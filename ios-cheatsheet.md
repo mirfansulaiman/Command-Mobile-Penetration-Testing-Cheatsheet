@@ -95,3 +95,56 @@ Command:
 idevicesyslog -m "Vantage"
 ```
 -m option is only print messages that contain STRING
+
+# xCode iOS Simulator Cheatsheet
+
+## Xcode and simulator side by side
+```
+defaults write com.apple.iphonesimulator AllowFullscreenMode -bool YES
+```
+![https://miro.medium.com/max/5760/1*TG6MNh3_qCtGA8UNMjk7mQ.png](https://miro.medium.com/max/5760/1*TG6MNh3_qCtGA8UNMjk7mQ.png)
+
+## List all simulators created
+```
+xcrun simctl list --json
+```
+
+## Launch simulator app 
+```
+open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/
+```
+
+### Launch multiple simulators
+```
+xcrun simctl boot 12F3C6FB-1A8A-4D20-922F-2DB485F58F0F
+xcrun simctl boot BE53CBFF-4900-4F10-A1D4-B451AB4C9E7E
+open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/
+```
+
+## Record simulator video
+```
+xcrun simctl io booted recordVideo — type=mp4 ./test.mp4
+```
+
+## Find the app container
+```
+xcrun simctl get_app_container booted com.bundle.identifier
+```
+
+## Stream simulator logs
+```
+`xcrun simctl spawn booted log stream > test.log&`; open test.log;
+```
+
+## Filter Logs
+```
+xcrun simctl spawn booted log stream --predicate 'eventMessage contains "com.itkan.awesome"'
+```
+
+The below command will help you know fields for creating the needed predicate
+```
+xcrun simctl spawn booted log stream --style=json
+```
+
+# Credit
+[Ankit Kumar Gupta](https://medium.com/@ankitkumargupta/ios-simulator-command-line-tricks-ee58054d30f4)
