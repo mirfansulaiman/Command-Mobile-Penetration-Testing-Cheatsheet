@@ -24,6 +24,9 @@ $ adb install app.testing.apk
 # Get the full path of an application
 $ adb shell pm path com.example.someapp
 
+# Upload File to development machine
+$ adb push frida-server /data/local/tmp/
+
 # Download the apk to development machine
 $ adb pull /data/app/com.example.someapp-2.apk
 
