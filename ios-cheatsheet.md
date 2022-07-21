@@ -14,6 +14,11 @@ Regist your apple ID as [Apple Developer Account](http://developer.apple.com/acc
 ## SSH Over USB (iPROXY)
 http://iphonedevwiki.net/index.php/SSH_Over_USB
 
+## Save SHSH blobs
+This tools is needed to backup your SHSH blobs if you want to downgrade iOS.
+### Blobsaver
+[Blobsaver](https://github.com/airsquared/blobsaver)
+
 ## Download .ipa file from app store or iPhone/iPad device
 
 ### Need Jailbroken 
