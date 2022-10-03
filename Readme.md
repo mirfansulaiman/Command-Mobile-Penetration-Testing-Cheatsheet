@@ -15,6 +15,16 @@ $ adb shell getprop ro.product.cpu.abi
 # List all application already installed
 $ adb shell pm list packages -f | grep -i 'testing'
 
+# List All Processes on Android
+$ adb shell ps
+$ adb shell ps -A
+
+# Stop Process on Android
+$ adb shell kill [PID]
+
+# Stop Package Process on Android
+$ adb shell am force-stop <packagename>
+
 # Tracing log on android
 $ adb logcat | grep com.app.testing
 
