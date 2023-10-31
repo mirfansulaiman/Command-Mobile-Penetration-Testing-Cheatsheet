@@ -1,9 +1,9 @@
 # Command Mobile Penetration Testing Cheatsheet
-The things what you should know about android :) </br>
+The things that you should know about Android :) </br>
 For iOS application please check [iOS Pentest Cheatsheet](https://github.com/mirfansulaiman/Command-Mobile-Penetration-Testing-Cheatsheet/blob/master/ios-cheatsheet.md).</br>
 
 ## ADB Cheatsheet
-Download adb http://adbdriver.com/downloads/ or you can using adb as default from Android Studio.
+Download adb http://adbdriver.com/downloads/ or you can use adb as default from Android Studio.
 
 ### ADB Command
 ```
@@ -57,6 +57,20 @@ $ adb shell settings put global verifier_verify_adb_installs 0
 
 # Disable verification package
 $ adb shell settings put global package_verifier_enable 0
+
+# Forwarding Port :
+# adb forward tcp:[Host port] tcp:[Device port]
+$ adb forward tcp:6100 tcp:7100
+
+# Reverse Port
+# adb reverse tcp:[Device port] tcp:[Host port]
+$ adb reverse tcp:80 tcp:8080
+
+# List all forwarding port
+$ adb forward --list
+
+# List all reverse port
+$ adb reverse --list
 ```
 
 ## Frida Cheatsheet
