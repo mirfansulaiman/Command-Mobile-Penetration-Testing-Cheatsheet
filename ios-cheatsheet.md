@@ -1,6 +1,6 @@
 # Command Mobile Penetration Testing Cheatsheet for iOS
 
-**Caution** : iOS application has a different environment with Android application, some command in here is only working with MacOS.
+**Caution** : The iOS application has a different environment than the Android application, some commands here only work with MacOS.
 
 ## Preparation
 **Install Brew**, Open terminal (Finder -> Application -> Utilities -> Terminal) and run this command :</br>
@@ -9,15 +9,24 @@
 `$ xcode-select --install`</br>
 Or you can download manualy on [Apple Website](https://developer.apple.com/downloads)</br></br>
 
-Regist your apple ID as [Apple Developer Account](http://developer.apple.com/account). You dont need to pay as Apple Developer Program on this section just register your account into developer, because we just need to get Certificate for signing ipa file on XCode or other tools.
+Regist your Apple ID as [Apple Developer Account](http://developer.apple.com/account). You don't need to pay as Apple Developer Program on this section just register your account as a developer, because we just need to get a Certificate for signing the ipa file on XCode or other tools.
 
 ## SSH Over USB (iPROXY)
 http://iphonedevwiki.net/index.php/SSH_Over_USB
 
 ## Save SHSH blobs
-This tools is needed to backup your SHSH blobs if you want to downgrade iOS.
+This tool is needed to back up your SHSH blobs if you want to downgrade iOS.
 ### Blobsaver
 [Blobsaver](https://github.com/airsquared/blobsaver)
+
+# iOS Terminal Command 
+```
+# list all process
+$ ps aux
+
+# Kill application/process
+$ killall [name]
+```
 
 ## Download .ipa file from app store or iPhone/iPad device
 
