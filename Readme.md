@@ -309,6 +309,13 @@ Step to repackaging apk.
 
     `keytool -list -printcert -jarfile "vantagepoint_bank-aligned-signed.apk"`
 
+# Install xapk / apks / multiple apk
+## Tools - Bundletool
+Download : [Android Bundletool](https://developer.android.com/tools/bundletool)
+
+command: 
+`java -jar bundletool.jar install-apks --apks my.apks` 
+
 ## For Lazy People :v
 
 1. Automate Check Root Detection -> https://github.com/laconicwolf/Android-App-Testing/blob/master/check_for_root_detection.py
