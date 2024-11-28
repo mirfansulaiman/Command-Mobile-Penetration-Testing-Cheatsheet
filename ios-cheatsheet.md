@@ -140,6 +140,18 @@ open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app/
 xcrun simctl io booted recordVideo — type=mp4 ./test.mp4
 ```
 
+## Install .IPA file to Simulator
+```
+xcrun simctl install booted /path/to/your/appfile.app
+```
+
+### How to get .app file? 
+1. Download the `.ipa` file
+2. Ensure `.ipa` file has been signed
+3. Rename the `.ipa` file to `.zip`
+4. Extract .zip file
+5. the .app file is inside folder `Payload`
+
 ## Find the app container
 ```
 xcrun simctl get_app_container booted com.bundle.identifier
@@ -160,5 +172,18 @@ The below command will help you know fields for creating the needed predicate
 xcrun simctl spawn booted log stream --style=json
 ```
 
-# Credit
+### Credit
 [Ankit Kumar Gupta](https://medium.com/@ankitkumargupta/ios-simulator-command-line-tricks-ee58054d30f4)
+
+# Troubleshoot !
+
+## Xcode16: This device has reached the maximum number of installed apps using a free developer profile
+1. Change with other apple account.
+2. or Remove 1 apps :( in devices
+ - Open Xcode
+ - Open "Devices and Simulator" Using shortcut `command + shift + 2`
+ - Remove 1 apps
+![Screenshot 2024-11-28 at 11 32 36](https://github.com/user-attachments/assets/54722d34-37d9-47b4-a250-55c81b229a06)
+ - and Try again install the apps !
+
+
