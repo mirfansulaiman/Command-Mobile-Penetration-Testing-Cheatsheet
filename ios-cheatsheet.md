@@ -101,6 +101,19 @@ To generate our provisioning profile you can do it on XCODE while install the ap
  6. And then, Open iOS App Signer
 - Reference: https://forum.kodi.tv/showthread.php?tid=287814
 
+# Screenshare from iphone Real Devices
+
+## QuickTime Player: Allows you to view and record your iPhone’s screen over USB.
+
+Steps:
+1. Connect your iPhone to your Mac using a USB cable.
+2. Open QuickTime Player on your Mac.
+3. Choose File > New Movie Recording.
+4. Click the small arrow next to the red record button in the QuickTime window and select your iPhone under the camera options.
+5. The screen of your iPhone will appear on your Mac screen. You can start recording by pressing the Record button in QuickTime.
+
+QuickTime allows you to record the screen of your real iOS device without requiring additional software or jailbreaks.
+
 # Capture Log Specific iOS Application
 
 ## Idevicesyslog
@@ -186,4 +199,7 @@ xcrun simctl spawn booted log stream --style=json
 ![Screenshot 2024-11-28 at 11 32 36](https://github.com/user-attachments/assets/54722d34-37d9-47b4-a250-55c81b229a06)
  - and Try again install the apps !
 
+
+## Xcode16: Could not locate device support files
+Solution: https://github.com/iGhibli/iOS-DeviceSupport 
 
