@@ -52,6 +52,9 @@ Both commands can be terminated using ctrl-D.
 # Dump Memory
 $ adb shell dumpsys meminfo com.package.name
 
+# Show all device configs
+$ adb shell settings list global
+
 # Disable verification adb
 $ adb shell settings put global verifier_verify_adb_installs 0
 
