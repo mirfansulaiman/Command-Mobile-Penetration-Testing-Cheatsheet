@@ -84,6 +84,13 @@ Need this file `DeveloperDiskImage.dmg` & `DeveloperDiskImage.dmg.signature`
 - mount the developerdiskimage: ./ideviceimagemounter.exe "./DeveloperDiskImage.dmg"
 - debug the apps : ./idevicedebug.exe -d run vantagepoint.id.Hook2
 
+## Running idevicedebug.exe on Mac
+Need this file `DeveloperDiskImage.dmg` & `DeveloperDiskImage.dmg.signature` 
+(From xcode folder install on mac `/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/DeviceSupport/<iOS_version_number>/DeveloperDiskImage.dmg.`)
+
+- mount the developerdiskimage: ideviceimagemounter DeveloperDiskImage.dmg
+- debug the apps : idevicedebug -d run vantagepoint.id.Hook2
+
 ## Signing IPA File with Our Provisioning Profile
 
 This tool is very helpfull :) [iOS App Signer](https://dantheman827.github.io/ios-app-signer/) is GUI based. 
