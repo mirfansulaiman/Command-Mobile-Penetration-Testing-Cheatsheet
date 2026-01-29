@@ -76,7 +76,7 @@ $ adb forward --list
 $ adb reverse --list
 ```
 
-## Frida Cheatsheet
+## adb Frida Cheatsheet
 Install Frida Server on android,</br>
 download frida server : https://github.com/frida/frida/releases
 ```
@@ -84,6 +84,8 @@ $ adb root # might be required
 $ adb push frida-server /data/local/tmp/
 $ adb shell "chmod 755 /data/local/tmp/frida-server"
 $ adb shell "/data/local/tmp/frida-server &"
+# alternative
+$ adb shell "su -c /data/local/tmp/frida-server &"
 ```
 
 ### Frida Command
