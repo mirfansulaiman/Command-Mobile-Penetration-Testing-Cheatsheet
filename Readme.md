@@ -193,7 +193,9 @@ Usage :
 $ reverse-apk app.testing.apk
 ```
 
-## Install Burp Certificate On Android
+## Install Burp Certificate On Android 
+
+### For Android < 14 & API level < 34
 Convert burp certificate from DER to PEM . If you lazy, you can download PEM file on this repository.
 ```
 $ openssl x509 -inform DER -in cacert.der -out cacert.pem
@@ -221,6 +223,58 @@ $ adb push 9a5ba575.0 /system/etc/security/cacerts/
 $ adb shell "chmod 644 /system/etc/security/cacerts/9a5ba575.0"
 $ adb shell "reboot" 
 ```
+
+### For Android > 14+ & API Level > 33
+
+Create burp cert : 
+```
+BURP_PROXY_ADDRESS="http://localhost:8080"
+wget "$BURP_PROXY_ADDRESS/cert" -O cacert.der
+
+openssl x509 -inform DER -in cacert.der -out cacert.pem
+
+CACERT_HASH=$(openssl x509 -inform PEM -subject_hash_old -in cacert.pem | head -1)
+CACERT_NAME="$CACERT_HASH.0"
+
+echo $CACERT_NAME
+
+mv cacert.pem $CACERT_NAME
+adb push $CACERT_NAME /sdcard/Download
+```
+
+Install Cert : 
+```
+adb shell
+su
+
+CACERT_NAME="9a5ba575.0" # replace me with the value in the first script
+MAGISK_MODULE_NAME="writable_system"
+
+# create our own magisk module dir and corresponding directory structure
+cd /data/adb/modules/
+mkdir -p "$MAGISK_MODULE_NAME/system/etc/security/cacerts/"
+
+# copy original system CA certs to module dir
+cp /system/etc/security/cacerts/* "$MAGISK_MODULE_NAME/system/etc/security/cacerts/"
+# copy burp CA to module dir
+mv "/sdcard/Download/$CACERT_NAME" "$MAGISK_MODULE_NAME/system/etc/security/cacerts/"
+
+# set proper permissions over the burp certificate
+cd "$MAGISK_MODULE_NAME/system/etc/security/cacerts/"
+chown root:root $CACERT_NAME
+chmod 644 $CACERT_NAME
+
+# exit the adb shell
+exit
+exit
+# reboot the phone
+adb reboot
+```
+Magisk Module : 
+- [Cert-Fixer](https://github.com/pwnlogs/cert-fixer/)
+
+
+Ref: https://adeadfed.com/posts/how-to-install-burpsuite-ca-certificate-on-android-14-with-magisk-no-third-party-modules/ 
 
 ## Install Open Gapps On Android Emulator
 Download : https://opengapps.org </br>
@@ -255,7 +309,7 @@ $ emulator.exe -list-avds
 # Run Emulator
 $ emulator.exe -avd [EmulatorName]
 ```
-
+Rooted Emulator Android Google Play Service: [www.8ksec.io](https://www.8ksec.io/rooting-an-android-emulator-for-mobile-security-testing/)
 ### Genymotion
 Download https://www.genymotion.com/ 
 
