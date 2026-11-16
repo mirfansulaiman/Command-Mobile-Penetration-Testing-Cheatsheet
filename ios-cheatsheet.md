@@ -11,6 +11,9 @@ Or you can download manualy on [Apple Website](https://developer.apple.com/downl
 
 Regist your Apple ID as [Apple Developer Account](http://developer.apple.com/account). You don't need to pay as Apple Developer Program on this section just register your account as a developer, because we just need to get a Certificate for signing the ipa file on XCode or other tools.
 
+## Emulator
+Vphone-cli : `https://github.com/Lakr233/vphone-cli/`
+
 ## SSH Over USB (iPROXY)
 http://iphonedevwiki.net/index.php/SSH_Over_USB
 
